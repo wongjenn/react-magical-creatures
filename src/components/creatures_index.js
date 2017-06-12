@@ -12,11 +12,8 @@ class CreaturesIndex extends Component {
   renderIndex() {
     return _.map(this.props.creatures, creature => {
       return (
-        <li key={creature.name}>
-          <a href="javascript"
-          onClick={() => this.props.selectCreature(creature.id)}>
-          {creature.name}
-          </a>
+        <li key={creature.name} onClick={() => this.props.selectCreature(creature.id)}>
+          <a> {creature.name}</a>
         </li>
       )
     })
@@ -27,7 +24,7 @@ class CreaturesIndex extends Component {
     return (
       <div>
         <h3> Creatures Index </h3>
-        <ul className="list-group col-sm-2">
+        <ul>
           {this.renderIndex()}
         </ul>
       </div>
@@ -36,8 +33,8 @@ class CreaturesIndex extends Component {
 
 }
 
-function mapStateToProps(state) {
-  return { creatures: state.creatures };
+function mapStateToProps({creatures}) {
+  return { creatures };
 }
 
 export default connect(mapStateToProps, { fetchCreatures, selectCreature })(CreaturesIndex);

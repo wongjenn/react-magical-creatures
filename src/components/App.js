@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import CreaturesIndex from './creatures_index.js';
+import CreaturesIndex from './creatures_index';
+import CreatureDetail from './creature_detail';
 import './App.css';
 
 class App extends Component {
@@ -11,6 +12,9 @@ class App extends Component {
         </div>
         <div className="App-Index">
           <CreaturesIndex />
+        </div>
+        <div className="App-Detail">
+          <CreatureDetail />
         </div>
       </div>
     );

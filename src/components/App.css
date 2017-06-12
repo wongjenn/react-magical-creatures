@@ -1,15 +1,35 @@
 .App {
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Tangerine', cursive;;
 }
 
 .App-header {
-  background-color: #222;
-  color: white;
+  background-color: #8D230F;
+  color: #FBCB7B;
+  text-align: center;
 }
 
 .App-Index {
-  padding-left: 10px;
-  padding-right: 5px;
+  position: fixed;
+  top: 78px;
+  bottom: 0;
+  left: 10px;
+  z-index: 1000;
+  display: inline-flex;
+  padding: 20px;
   text-align: left;
   font-size: large;
+  background-color: #FBCB7B;
+  color: #8D230F;
+}
+
+.App-Detail {
+  margin-left: 180px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: justify;
+  display: inline-flex;
+  background-color: #F1F3CE;
+  color: #8D230F;
 }
