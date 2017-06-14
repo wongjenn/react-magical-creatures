@@ -4,10 +4,17 @@ import { connect } from 'react-redux';
 
 class CreatureDetail extends Component {
   renderFolklores(){
-    return _.map(this.props.creature.folklores, (folklore, i) => {
+    const folklores = this.props.creature.folklores;
+    const regions = this.props.creature.regions;
+
+    return _.map(folklores, (folklore, i) => {
+      const regionId = folklore.region_id;
+      const regionName = _.find(regions, {id: regionId});
+
       return (
         <p key={folklore.id}>
-        {i + 1}. {folklore.reference}
+        {i + 1}. {regionName.name}
+         <p>{folklore.reference} </p>
         </p>
       )
     })
@@ -26,8 +33,9 @@ class CreatureDetail extends Component {
     return (
       <div>
         <h1>{this.props.creature.name}</h1>
-        <p> Description: {this.props.creature.description} </p>
-        <h3> Folklores: </h3>
+        <h3>Description: </h3>
+        <p> {this.props.creature.description} </p>
+        <h2> Folklores: </h2>
         <ul> {this.renderFolklores()}</ul>
       </div>
     );
