@@ -3,7 +3,7 @@ import axios from 'axios';
 export const FETCH_CREATURES = 'fetch_creatures';
 export const SELECT_CREATURE = 'select_creature';
 
-const ROOT_URL = 'http://localhost:3000/api/v1/magical_creatures';
+const ROOT_URL = 'https://magical-creatures-api.herokuapp.com/api/v1/magical_creatures';
 
 export function fetchCreatures() {
   const request = axios.get(`${ROOT_URL}`);

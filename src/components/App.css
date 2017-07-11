@@ -1,23 +1,25 @@
 .App {
-  margin: 0;
-  padding: 0;
   font-family: 'Lovers Quarrel', cursive;
 }
 
+#root {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
 .App-header {
+  top: 0;
+  position: fixed;
+  width: 100%;
   background-color: #8D230F;
   color: #FBCB7B;
   text-align: center;
 }
 
 .App-Index {
-  position: fixed;
-  top: 78px;
-  bottom: 0;
-  left: 10px;
-  z-index: 1000;
-  display: inline-flex;
-  padding: 20px;
+  padding-top: 2%;
   text-align: left;
   font-size: large;
   background-color: #FBCB7B;
@@ -25,11 +27,30 @@
 }
 
 .App-Detail {
-  margin-left: 180px;
   padding-left: 20px;
   padding-right: 20px;
   text-align: justify;
-  display: inline-flex;
   background-color: #F1F3CE;
   color: #8D230F;
+}
+
+@media(min-width: 480px){
+/*ny styles in here are applied when the screen is greater than 480px wide*/
+  .App-Index {
+    position: fixed;
+    top: 78px;
+    bottom: 0;
+    left: 10px;
+    z-index: 1000;
+    display: inline-flex;
+    padding: 20px;
+  }
+
+  .App-Detail {
+    position: relative;
+    top: 78px;
+    margin-left: 190px;
+    display: inline-flex;
+  }
+
 }
